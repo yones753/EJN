@@ -1,0 +1,17 @@
+
+.card-img{
+    background-color: gray; 
+    max-height:200px ;
+}
+img{
+    max-height: 200px;
+}
+
+.moreInfoo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+

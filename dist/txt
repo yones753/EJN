@@ -1,0 +1,49 @@
+
+in html 
+
+   <script id="dremTeams-template" type="text/x-handlebars-template">
+        {{#each dreamTeam}}
+        <div class="card col m-2 col-lg-3 col-md-4 col-sm-6 bg-primary text-white" Id="{{personId}}">
+            <p class="card-header fw-bold info">{{firstName}} {{lastName}}</p>
+            <p class="info">-{{jersey}}-</p>
+           <div class="divImg"><img class="card-img" style="max-height: 200px;" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onError="this.onerror=null;this.src='/basketball1.jpg';" ></div>
+            <p class="info">{{pos}}</p>
+            <button col-6 class="deletePlayer btn btn-outline-light m-1" type="button">Delete from Team</button>
+            <!-- <button col-6 class="showInfo btn btn-outline-light m-1" type="button">show more</button> -->
+        </div>
+        {{/each}}
+    </script>
+
+
+      <!-- <script id="player-template" type="text/x-handlebars-template">
+        {{#each players}}
+        <div class="card col m-2 col-lg-3 col-md-4 col-sm-6 bg-primary text-white" Id="{{personId}}">
+            <p class="card-header fw-bold info">{{firstName}} {{lastName}}</p>
+            <p class="info">-{{jersey}}-</p>
+           <div class="divImg"><img class="card-img" style="max-height: 200px;" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onError="this.onerror=null;this.src='/basketball1.jpg';" ></div>
+            <p class="info">{{pos}}</p>
+            <button col-6 class="addPlayer btn btn-outline-light m-1" type="button">Add from Team</button>
+            <button col-6 class="showInfo btn btn-outline-light m-1" type="button">show more</button>
+        </div>
+        {{/each}}
+    </script> -->
+
+
+
+
+    in render 
+
+     renderDreamTeam = function(dreamTeam){
+        const source = $('#dremTeams-template').html();
+        const template = Handlebars.compile(source);
+        const newHTML = template({dreamTeam});
+        idcardsElement.append(newHTML);
+    }
+
+
+    in main
+    
+    $("body").on("click",".deletePlayer",function(){
+    console.log("just msg delete");
+    playersManager.deletePlayertoDreamTeam()
+})
