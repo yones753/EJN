@@ -34,9 +34,9 @@
            <div class="divImg"><img class="card-img" style="max-height: 200px;" src="https://nba-players.herokuapp.com/players/{{lastName}}/{{firstName}}" onError="this.onerror=null;this.src='/basketball1.jpg';" ></div>
             <p class="info">{{pos}}</p>
             {{#if already}}
-            <button col-6 class="addPlayer btn btn-outline-light m-1" type="button">Remove to Team</button>
+            <button col-6 class="addPlayer btn btn-outline-light m-1" type="button">Remove from Team</button>
             {{else}}
-            <button col-6 class="addPlayer btn btn-outline-light m-1" type="button">Add from Team</button>
+            <button col-6 class="addPlayer btn btn-outline-light m-1" type="button">Add to Team</button>
             {{/if}}
             <button col-6 class="showInfo btn btn-outline-light m-1" type="button">show more</button>
         </div>

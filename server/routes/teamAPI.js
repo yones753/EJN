@@ -71,9 +71,9 @@ router.post('/roster/:personId', function (req, res) {
         else {
             dreamTeam = dreamTeam.filter(person => person.personId != personId)
             res.send("deleted")
-             }
-            
-    }
+             }     
+    }           
+                
 })
 
 module.exports = router
